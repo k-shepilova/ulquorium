@@ -1,0 +1,34 @@
+.projects {
+
+}
+
+.project {
+  display: grid;
+  grid-template-areas:
+    "lefttop righttop rightbottom"
+    "leftbottom  righttop rightbottom"
+    ". righttop rightbottom";
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 280px 1fr 1fr;
+  @media (min-width: 1200px) {
+    grid-template-areas:
+    "lefttop righttop rightbottom"
+    "leftbottom  righttop rightbottom"
+    ". righttop rightbottom";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 280px 1fr 1fr;
+  }
+  
+  .item-lt {
+    grid-area: lefttop;
+  }
+  .item-lb {
+    grid-area: leftbottom;
+  }
+  .item-rt {
+    grid-area: righttop;
+  }
+  .item-rb {
+    grid-area: rightbottom;
+  }
+}
