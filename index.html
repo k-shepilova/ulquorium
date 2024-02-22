@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="./style.css">
   <title>Ulquorium</title>
   <script src="./js/main.js" defer></script>
@@ -37,10 +38,12 @@
       </h1>
       <div class="text">
         <div class="col-left">
-          <p>Over the past 10+ years, I have had the opportunity to work with both large global companies and startups, as
+          <p>Over the past 10+ years, I have had the opportunity to work with both large global companies and startups,
+            as
             well as small businesses. I have experience in product development, outsourcing, software, and game
             development.</p>
-          <p>I have a passion for creating clean and user-friendly products. I pay attention to details, but I understand
+          <p>I have a passion for creating clean and user-friendly products. I pay attention to details, but I
+            understand
             that this process is not endless, and every product has a task it needs to accomplish.</p>
         </div>
         <div class="col-right">
@@ -51,12 +54,24 @@
       <div class="blur"></div>
     </div>
   </div>
-
 </header>
 <main class="main" id="main">
   <div class="container">
     <div class="projects">
-      <div class="project">
+      <div class="project two-col">
+        <div class="item-rt">
+          <div class="image-holder">
+            <div class="bg">
+              <img src="./images/bg1.jpg" srcset="./images/bg1.jpg 1x, ./images/bg1_2x.jpg 2x"
+                   alt="Background Drakewars update">
+            </div>
+            <div class="img">
+              <img src="./images/img2.png" srcset="./images/img2.png 1x, ./images/img2_2x.png 2x"
+                   alt="Drakewars update">
+            </div>
+            <span class="soon-label">Coming soon</span>
+          </div>
+        </div>
         <div class="item-lt">
           <h2 class="project-title">Drakewars update</h2>
           <ul class="tags">
@@ -67,10 +82,18 @@
             <p>Working on a gaming startup, the first version of which was launched in 2019</p>
           </div>
         </div>
-        <div class="item-rt">
+        <div class="item-rb">
           <div class="image-holder">
-            <img src="./images/img2.png" srcset="./images/img2.png 1x, ./images/img2_2x.png 2x" alt="Drakewars update">
-            <span class="soon-label">Coming soon</span>
+            <div class="logo">
+              <img src="./images/logo1.svg" alt="Bitahon app">
+            </div>
+            <div class="bg">
+              <img src="./images/bg2.jpg" srcset="./images/bg2.jpg 1x, ./images/bg2_2x.jpg 2x"
+                   alt="Background Bitahon app">
+            </div>
+            <div class="img">
+              <img src="./images/img3.png" srcset="./images/img3.png 1x, ./images/img3_2x.png 2x" alt="Bitahon app">
+            </div>
           </div>
         </div>
         <div class="item-lb">
@@ -83,17 +106,21 @@
             <p>Cryptocurrency protection application</p>
           </div>
         </div>
-        <div class="item-rb">
-          <div class="image-holder">
-            <div class="logo">
-              <img src="./images/logo1.svg" alt="Bitahon app">
-            </div>
-            <img src="./images/img3.png" srcset="./images/img3.png 1x, ./images/img3_2x.png 2x" alt="Bitahon app">
-          </div>
-        </div>
       </div>
       <div class="project">
-        <div class="col-2">
+        <div class="item-rt">
+          <div class="image-holder">
+            <div class="bg">
+              <img src="./images/bg3.jpg" srcset="./images/bg3.jpg 1x, ./images/bg3_2x.jpg 2x"
+                   alt="Background RocketHash">
+            </div>
+            <div class="img">
+              <img src="./images/elf.svg" alt="Product designer at RocketHash">
+            </div>
+          </div>
+        </div>
+
+        <div class="item-lt">
           <h2 class="project-title"><a href="#" target="_blank">Product designer at RocketHash</a></h2>
           <ul class="tags">
             <li>2020 - 23</li>
@@ -104,15 +131,24 @@
               cryptocurrencies. I have created new sections and made changes to existing ones. NDA 😟</p>
           </div>
         </div>
-        <div class="col-8">
+      </div>
+      <div class="project two-col">
+        <div class="item-rt">
           <div class="image-holder">
-            <img src="./images/elf.svg" alt="Product designer at RocketHash">
-            <span class="soon-label">Coming soon</span>
+            <div class="logo">
+              <img src="./images/logo2.svg" alt="Design of the mobile crypto wallet Fintoda">
+            </div>
+            <div class="bg">
+              <img src="./images/bg4.jpg" srcset="./images/bg4.jpg 1x, ./images/bg4_2x.jpg 2x"
+                   alt="Background Fintoda">
+            </div>
+            <div class="img">
+              <img src="./images/img4.png" srcset="./images/img4.png 1x, ./images/img4_2x.png 2x"
+                   alt="Design of the mobile crypto wallet Fintoda">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="project">
-        <div class="col-2">
+        <div class="item-lt">
           <h2 class="project-title"><a href="#" target="_blank">Design of the mobile crypto wallet Fintoda</a></h2>
           <ul class="tags">
             <li>2020</li>
@@ -123,7 +159,19 @@
             <p>Cryptocurrency protection application</p>
           </div>
         </div>
-        <div class="col-2">
+        <div class="item-rb">
+          <div class="image-holder">
+            <div class="bg decor-table">
+              <img src="./images/bg11.jpg" srcset="./images/bg11.jpg 1x, ./images/bg11_2x.jpg 2x"
+                   alt="Background Drakewars">
+            </div>
+            <div class="img">
+              <img src="./images/img5.png" srcset="./images/img5.png 1x, ./images/img5_2x.png 2x"
+                   alt="Designing gaming startup Drakewars">
+            </div>
+          </div>
+        </div>
+        <div class="item-lb">
           <h2 class="project-title"><a href="#" target="_blank">Designing gaming startup Drakewars</a></h2>
           <ul class="tags">
             <li>2019 − 20</li>
@@ -134,24 +182,243 @@
             <p>Working on a gaming startup, the first version of which was launched in 2019</p>
           </div>
         </div>
-        <div class="col-4">
+      </div>
+      <div class="project">
+        <div class="item-rt">
           <div class="image-holder">
-            <div class="logo">
-              <img src="./images/logo2.svg" alt="Design of the mobile crypto wallet Fintoda">
+            <div class="bg decor-table">
+              <img src="./images/bg5.jpg" srcset="./images/bg5.jpg 1x, ./images/bg5_2x.jpg 2x"
+                   alt="Background Gameloft">
             </div>
-            <img src="./images/img4.png" srcset="./images/img4.png 1x, ./images/img4_2x.png 2x"
-                 alt="Design of the mobile crypto wallet Fintoda">
+            <div class="project-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/sword.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/question.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/banana.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/sword.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/question.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+                <div class="slide swiper-slide">
+                  <div class="slide-img">
+                    <img src="./images/banana.svg"
+                         alt="Gameloft">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="item-lt">
+          <h2 class="project-title"><a href="#" target="_blank">Game UI/UX designer in Gameloft</a></h2>
+          <ul class="tags">
+            <li>2017 - 19</li>
+            <li>Gamedev</li>
+          </ul>
+          <div class="text">
+            <p>Development of a new game, lead designer on the development of the second game, and the development of
+              the third game.</p>
+          </div>
+          <ul class="links">
+            <li><a href="#" target="_blank">Dungeon Hunter: Curse of Heaven</a></li>
+            <li><a href="#" target="_blank">Minion Rush</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="project sm-height">
+        <div class="item-rt">
           <div class="image-holder">
-            <img src="./images/img5.png" srcset="./images/img5.png 1x, ./images/img5_3x.png 2x"
-                 alt="Designing gaming startup Drakewars">
+            <div class="bg">
+              <img src="./images/bg6.jpg" srcset="./images/bg6.jpg 1x, ./images/bg6_2x.jpg 2x"
+                   alt="Background Route4Me">
+            </div>
+            <div class="img icon">
+              <img src="./images/arrowtop.svg" alt="Route4Me">
+            </div>
+          </div>
+        </div>
+        <div class="item-lt">
+          <h2 class="project-title"><a href="#" target="_blank">Designer in Route4Me</a></h2>
+          <ul class="tags">
+            <li>2016</li>
+          </ul>
+          <div class="text">
+            <p>Cryptocurrency protection application</p>
+          </div>
+        </div>
+      </div>
+      <div class="project three-col">
+        <div class="item-rt">
+          <div class="image-holder">
+            <div class="bg">
+              <img src="./images/bg7.jpg" srcset="./images/bg7.jpg 1x, ./images/bg7_2x.jpg 2x"
+                   alt="Background Turum-burum">
+            </div>
+            <div class="img">
+              <img src="./images/img7.png" srcset="./images/img7.png 1x, ./images/img7_2x.png 2x"
+                   alt="Turum-burum">
+            </div>
+          </div>
+        </div>
+        <div class="item-rm">
+          <div class="image-holder">
+            <div class="bg decor-table">
+              <img src="./images/bg8.jpg" srcset="./images/bg8.jpg 1x, ./images/bg8_2x.jpg 2x"
+                   alt="Background Turum-burum Pampik">
+            </div>
+            <div class="img">
+              <img src="./images/img8.png" srcset="./images/img8.png 1x, ./images/img8_2x.png 2x"
+                   alt="Turum-burum Pampik">
+            </div>
+          </div>
+        </div>
+        <div class="item-rb">
+          <div class="image-holder">
+            <div class="bg decor-table">
+              <img src="./images/bg9.jpg" srcset="./images/bg9.jpg 1x, ./images/bg9_2x.jpg 2x"
+                   alt="Background Turum-burum Secunda">
+            </div>
+            <div class="img">
+              <img src="./images/img9.png" srcset="./images/img9.png 1x, ./images/img9_2x.png 2x"
+                   alt=" Turum-burum Secunda">
+            </div>
+          </div>
+        </div>
+        <div class="item-lt">
+          <h2 class="project-title"><a href="#" target="_blank">UI designer in
+            Turum-burum</a></h2>
+          <ul class="tags">
+            <li>2015</li>
+            <li>ecommerce</li>
+          </ul>
+          <div class="text">
+            <p>E-commerce studio with top stores in Ukraine</p>
+          </div>
+          <ul class="links">
+            <li><a href="#" target="_blank">Shop for Children's – “Pampik”</a></li>
+            <li><a href="#" target="_blank">Watch Store – “Secunda”</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="project">
+        <div class="item-rt">
+          <div class="image-holder">
+            <div class="bg">
+              <img src="./images/bg10.jpg" srcset="./images/bg10.jpg 1x, ./images/bg10_2x.jpg 2x"
+                   alt="Background Blimb">
+            </div>
+            <div class="animation">
+              <div class="eye">
+                <img src="/images/eye.svg" alt="Blimb">
+              </div>
+              <div class="ball">
+                <img src="/images/ball.svg" alt="Blimb">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-lt">
+          <h2 class="project-title"><a href="#" target="_blank">Blimb</a></h2>
+          <ul class="tags">
+            <li>2015, My pet 🐕</li>
+          </ul>
+          <div class="text">
+            <p>Once upon a time, my friend and I decided to create a website for ourselves, and it suddenly became
+              popular.</p>
           </div>
         </div>
       </div>
     </div>
+    <div class="old-projects">
+      <div class="col-left">
+        <h2 class="project-title">Some of old</h2>
+      </div>
+      <div class="col-right">
+        <ul>
+          <li class="item">
+            <a href="#">
+              <img src="./images/union.svg" alt="Dribbble">
+              <span class="link">Dribbble</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <img src="./images/m.svg" alt="Medium">
+              <span class="link">Medium</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2015</span>
+              <img src="./images/cardiomo.svg" alt="Cardiomo">
+              <span class="link">Cardiomo</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2014</span>
+              <img src="./images/dhyna.svg" alt="Dhyna">
+              <span class="link">Dhyna</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2014</span>
+              <img src="./images/monsterplay.svg" alt="Monsterplay">
+              <span class="link">Monsterplay</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2013</span>
+              <img src="./images/worker.svg" alt="Worker">
+              <span class="link">Worker</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2013</span>
+              <img src="./images/yamisushi.svg" alt="Yamisushi">
+              <span class="link">Yamisushi</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#">
+              <span class="year">2012</span>
+              <img src="./images/workers.svg" alt="Workers">
+              <span class="link">Workers</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

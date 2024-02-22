@@ -151,13 +151,10 @@ body {
   padding-bottom: 44px;
   @media (min-width: 984px) {
     justify-content: flex-start;
-    width: 26%;
-    padding-right: 20px;
+    width: 286px;
+    padding-right: 46px;
   }
-  @media (min-width: 1920px) {
-    width: 18%;
-  }
-  @media (min-width: 984px) {
+  @media (min-width: 2540px) {
     width: 70px;
   }
 }
