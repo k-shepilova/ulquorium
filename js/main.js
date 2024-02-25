@@ -3,17 +3,16 @@ document.querySelector('.nav-opener').addEventListener('click', function () {
 });
 
 function scaleSlides(swiper) {
-    // Adjust the scale based on the active breakpoint
     const isMobileView = swiper.params.slidesPerView === 1;
 
     swiper.slides.forEach((slide) => {
         var scale, opacity;
         if (slide === swiper.slides[swiper.activeIndex]) {
-            scale = 1; // Center slide scale
+            scale = 1;
             opacity = 1;
         } else {
-            scale = isMobileView ? 1 : 0.8; // Smaller scale for other slides on desktop
-            opacity = isMobileView ? 1 : 0.6; // Set the opacity lower for "inactive" slides on desktop
+            scale = isMobileView ? 1 : 0.8;
+            opacity = isMobileView ? 1 : 0.6;
         }
         slide.style.transform = `scale(${scale})`;
         slide.style.opacity = opacity;
@@ -25,19 +24,17 @@ const mySwiper = new Swiper('.swiper', {
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
-    loopedSlides: 3, // Set to the total number of slides
+    loopedSlides: 3,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    // Define your breakpoints here
     breakpoints: {
-        // when window width is <= 640px
         640: {
             slidesPerView: 3,
             centeredSlides: true,
             loop: true,
-            loopedSlides: 3 // This should still be the total number of slides
+            loopedSlides: 3
         }
     },
     on: {

@@ -735,13 +735,8 @@ h1 em {
 }
 @media (min-width: 1920px) {
   .project {
-    display: grid;
     row-gap: 40px;
-    -moz-column-gap: 4px;
-         column-gap: 4px;
     grid-template-areas: "lefttop righttop righttop" ".  righttop righttop";
-    grid-auto-rows: 1fr;
-    grid-template-columns: 280px 1fr 1fr;
   }
 }
 .project.two-col {
@@ -777,13 +772,12 @@ h1 em {
 }
 @media (min-width: 984px) {
   .project.three-col {
-    grid-template-areas: "lefttop righttop righttop" "leftbottom  rightbottom rightbottom";
+    grid-template-areas: "lefttop righttop rightmiddle rightbottom" ".  righttop rightmiddle rightbottom";
+    grid-template-columns: 280px 1fr 1fr 1fr;
   }
 }
-@media (min-width: 1920px) {
-  .project.three-col {
-    grid-template-areas: "lefttop righttop rightbottom" "leftbottom  righttop rightbottom" ". righttop rightbottom";
-  }
+.project.sm-height .image-holder {
+  min-height: 320px;
 }
 .project .item-lt, .project .item-lb {
   position: relative;
@@ -999,8 +993,10 @@ h1 em {
   border-radius: 8px;
 }
 
-.old-projects {
-  display: flex;
+@media (min-width: 984px) {
+  .old-projects {
+    display: flex;
+  }
 }
 @media (min-width: 984px) {
   .old-projects .col-left {
@@ -1114,19 +1110,220 @@ h1 em {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Style your navigation buttons */
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  /* Add more styling according to your design */
 }
 
 .swiper-button-prev {
-  left: 10px; /* Adjust based on your design */
+  left: 10px;
 }
 
 .swiper-button-next {
-  right: 10px; /* Adjust based on your design */
+  right: 10px;
+}
+
+.nda-project .image-holder .bg:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/noise.gif");
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.05;
+}
+.nda-project .image-holder .img:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/shine.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rocketshine 5s infinite;
+}
+
+.blimb-project .image-holder {
+  position: relative;
+  min-height: 360px;
+}
+@media (min-width: 860px) {
+  .blimb-project .image-holder {
+    min-height: 720px;
+  }
+}
+@media (min-width: 2540px) {
+  .blimb-project .image-holder {
+    min-height: 880px;
+  }
+}
+.blimb-project .image-holder:before {
+  content: "";
+  background-image: url(./images/noise.png);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.animation {
+  position: relative;
+  width: 100%;
+  transition: 0.3s;
+}
+.animation .eye {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-duration: 24s;
+  animation-name: eyemoves;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.66, -0.01, 0.36, 1);
+}
+.animation .eye img {
+  width: unset;
+  height: unset;
+}
+.animation .ball {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transform: translate(15%, 0);
+  animation-duration: 24s;
+  animation-name: ballmoves;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* ------------------------ BLIMB ANIMATION ------------------------ */
+@keyframes eyemoves {
+  0% {
+    transform: translate(-80px, 0) scale(0.98, 1);
+  }
+  14% {
+    transform: translate(80px, 0) scale(0.98, 1);
+  }
+  21% {
+    transform: translate(0px, 0);
+  }
+  28% {
+    transform: translate(-80px, -15px) scale(0.98, 1);
+  }
+  33% {
+    transform: translate(-35px, -15px);
+  }
+  43% {
+    transform: translate(10px, 15px);
+  }
+  53% {
+    transform: translate(70px, -15px) scale(0.99, 1);
+  }
+  56% {
+    transform: translate(80px, -10px) scale(0.98, 1);
+  }
+  68% {
+    transform: translate(-40px, 15px);
+  }
+  72% {
+    transform: translate(-80px, 15px) scale(0.98, 1);
+  }
+  79% {
+    transform: translate(0px, 12.5px);
+  }
+  86% {
+    transform: translate(80px, 10px) scale(0.98, 1);
+  }
+  93% {
+    transform: translate(0px, 5px);
+  }
+  100% {
+    transform: translate(-80px, 0) scale(0.98, 1);
+  }
+}
+@keyframes ballmoves {
+  0% {
+    top: 45%;
+    left: 0;
+  }
+  14% {
+    top: 40%;
+    left: 98%;
+  }
+  28% {
+    top: 30%;
+    left: 0;
+  }
+  33% {
+    top: 0;
+    left: 20%;
+  }
+  43% {
+    top: 97%;
+    left: 60%;
+  }
+  53% {
+    top: 0;
+    left: 90%;
+  }
+  56% {
+    top: 10%;
+    left: 98%;
+  }
+  68% {
+    top: 95%;
+    left: 30%;
+  }
+  72% {
+    top: 90%;
+    left: 0;
+  }
+  86% {
+    top: 70%;
+    left: 98%;
+  }
+  100% {
+    top: 45%;
+    left: 0;
+  }
+}
+/* ------------------------ ELF ANIMATION ------------------------ */
+@keyframes rocketshine {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  32% {
+    opacity: 0.5;
+  }
+  37% {
+    opacity: 0.3;
+  }
+  39% {
+    opacity: 0.5;
+  }
+  44% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
 }
