@@ -11,9 +11,33 @@
 </head>
 <body>
 <header id="header" class="header">
+  <div class="mobile-menu">
+    <button class="close-btn">Close</button>
+    <div class="languages">
+      <ul class="language-list">
+        <li class="active"><span>En</span></li>
+        <li><a href="#">Ua</a></li>
+        <li><a href="#">Ru</a></li>
+      </ul>
+    </div>
+    <div class="text">
+      <p>If you want to speak with me: </p>
+      <ul>
+        <li>
+          <a href="mailto:serhii.sarzhevsky@gmail.com" target="_blank">serhii.sarzhevsky@gmail.com</a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="icon-link">LinkedIn</a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="icon-link">Telegram</a>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="container">
     <div class="header-top">
-      <div class="languages">
+      <div class="languages mobile-hidden">
         <ul class="language-list">
           <li class="active"><span>En</span></li>
           <li><a href="#">Ua</a></li>
@@ -46,19 +70,18 @@
             understand
             that this process is not endless, and every product has a task it needs to accomplish.</p>
         </div>
-        <div class="col-right">
+        <div class="col-right mobile-hidden">
           <p>If you want to speak with me <a href="mailto:serhii.sarzhevsky@gmail.com" target="_blank">serhii.sarzhevsky@gmail.com</a>,
-            in <a href="LinkedIn" target="_blank">LinkedIn</a> or <a href="#" target="_blank">Telegram</a>.</p>
+            in <a href="#" target="_blank">LinkedIn</a> or <a href="#" target="_blank">Telegram</a>.</p>
         </div>
       </div>
-      <div class="blur"></div>
     </div>
   </div>
 </header>
 <main class="main" id="main">
   <div class="container">
     <div class="projects">
-      <div class="project two-col">
+      <div class="project two-col mobile-first-hidden">
         <div class="item-rt">
           <div class="image-holder">
             <div class="bg">
@@ -114,6 +137,7 @@
               <img src="./images/bg3.jpg" srcset="./images/bg3.jpg 1x, ./images/bg3_2x.jpg 2x"
                    alt="Background RocketHash">
             </div>
+            <h3 class="nda-title">NDA</h3>
             <div class="img">
               <img src="./images/elf.svg" alt="Product designer at RocketHash">
             </div>
@@ -182,7 +206,7 @@
           </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project slider-project">
         <div class="item-rt">
           <div class="image-holder">
             <div class="bg decor-table">
@@ -243,7 +267,7 @@
             <p>Development of a new game, lead designer on the development of the second game, and the development of
               the third game.</p>
           </div>
-          <ul class="links">
+          <ul class="links mobile-hidden">
             <li><a href="#" target="_blank">Dungeon Hunter: Curse of Heaven</a></li>
             <li><a href="#" target="_blank">Minion Rush</a></li>
           </ul>
@@ -272,24 +296,16 @@
         </div>
       </div>
       <div class="project three-col">
-        <div class="item-rt">
+        <div class="item-rt mobile-hidden">
           <div class="image-holder">
-            <div class="bg">
-              <img src="./images/bg7.jpg" srcset="./images/bg7.jpg 1x, ./images/bg7_2x.jpg 2x"
-                   alt="Background Turum-burum">
-            </div>
             <div class="img">
               <img src="./images/img7.png" srcset="./images/img7.png 1x, ./images/img7_2x.png 2x"
                    alt="Turum-burum">
             </div>
           </div>
         </div>
-        <div class="item-rm">
+        <div class="item-rm mobile-hidden">
           <div class="image-holder">
-            <div class="bg decor-table">
-              <img src="./images/bg8.jpg" srcset="./images/bg8.jpg 1x, ./images/bg8_2x.jpg 2x"
-                   alt="Background Turum-burum Pampik">
-            </div>
             <div class="img">
               <img src="./images/img8.png" srcset="./images/img8.png 1x, ./images/img8_2x.png 2x"
                    alt="Turum-burum Pampik">
@@ -298,13 +314,12 @@
         </div>
         <div class="item-rb">
           <div class="image-holder">
-            <div class="bg decor-table">
-              <img src="./images/bg9.jpg" srcset="./images/bg9.jpg 1x, ./images/bg9_2x.jpg 2x"
-                   alt="Background Turum-burum Secunda">
-            </div>
-            <div class="img">
+            <div class="img mobile-hidden">
               <img src="./images/img9.png" srcset="./images/img9.png 1x, ./images/img9_2x.png 2x"
                    alt=" Turum-burum Secunda">
+            </div>
+            <div class="mobile-img">
+              <img src="./images/img10.png" srcset="./images/img10.png 1x, ./images/img10_2x.png 2x" alt="">
             </div>
           </div>
         </div>
@@ -318,7 +333,7 @@
           <div class="text">
             <p>E-commerce studio with top stores in Ukraine</p>
           </div>
-          <ul class="links">
+          <ul class="links mobile-hidden">
             <li><a href="#" target="_blank">Shop for Children's – “Pampik”</a></li>
             <li><a href="#" target="_blank">Watch Store – “Secunda”</a></li>
           </ul>
@@ -327,10 +342,6 @@
       <div class="project blimb-project">
         <div class="item-rt">
           <div class="image-holder">
-            <div class="bg">
-              <img src="./images/bg10.jpg" srcset="./images/bg10.jpg 1x, ./images/bg10_2x.jpg 2x"
-                   alt="Background Blimb">
-            </div>
             <div class="animation">
               <div class="eye">
                 <img src="/images/eye.svg" alt="Blimb">
@@ -361,12 +372,14 @@
         <ul>
           <li class="item">
             <a href="#">
+              <span class="icon"><img src="./images/external-link.svg" alt="external link Dribble"></span>
               <img src="./images/union.svg" alt="Dribbble">
               <span class="link">Dribbble</span>
             </a>
           </li>
           <li class="item">
             <a href="#">
+              <span class="icon"><img src="./images/external-link.svg" alt="external link Medium"></span>
               <img src="./images/m.svg" alt="Medium">
               <span class="link">Medium</span>
             </a>

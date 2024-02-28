@@ -50,3 +50,10 @@ h1, h2, h3, h4, h5, h6{
 main{
   padding-bottom: 64px;
 }
+
+.mobile-hidden{
+  display: none;
+  @media (min-width: 1360px) {
+    display: block;
+  }
+}

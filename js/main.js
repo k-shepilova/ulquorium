@@ -1,5 +1,19 @@
-document.querySelector('.nav-opener').addEventListener('click', function () {
-    document.querySelector('body').classList.toggle('active');
+document.querySelector('.nav-opener').addEventListener('click', function (event) {
+    event.stopPropagation();
+    document.querySelector('body').classList.add('active');
+});
+
+document.querySelector('.close-btn').addEventListener('click', function () {
+    document.querySelector('body').classList.remove('active');
+});
+
+document.addEventListener('click', function(event) {
+    var isClickInsideMenu = document.querySelector('.mobile-menu').contains(event.target);
+    var isMenuActive = document.querySelector('body').classList.contains('active');
+
+    if (!isClickInsideMenu && isMenuActive) {
+        document.querySelector('body').classList.remove('active');
+    }
 });
 
 function scaleSlides(swiper) {
@@ -30,7 +44,7 @@ const mySwiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        640: {
+        740: {
             slidesPerView: 3,
             centeredSlides: true,
             loop: true,
