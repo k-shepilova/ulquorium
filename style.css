@@ -316,7 +316,7 @@ body {
 
 body {
   font-family: "Titillium Web", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-  background: #F8F8F8;
+  background: #f8f8f8;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
@@ -352,13 +352,13 @@ p {
 }
 
 a {
-  color: #1B45C7;
+  color: #1b45c7;
   display: inline-block;
   text-decoration: none;
   transition: 0.2s;
 }
 a:hover {
-  color: #B01818;
+  color: #b01818;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -439,7 +439,7 @@ body:after {
 }
 
 .mobile-menu {
-  background: #F8F8F8;
+  background: #f8f8f8;
   position: fixed;
   top: 0;
   left: 0;
@@ -521,7 +521,7 @@ body:after {
 }
 
 .language-list {
-  background: #F8F8F8;
+  background: #f8f8f8;
   list-style-type: none;
   font-size: 14px;
   display: flex;
@@ -563,11 +563,11 @@ body:after {
   margin-bottom: 0;
 }
 .language-list li.active a, .language-list li.active span {
-  color: #FF2E00;
+  color: #ff2e00;
   border-bottom-color: transparent;
 }
 .language-list a, .language-list span {
-  color: #1B45C7;
+  color: #1b45c7;
   text-decoration: none;
   text-transform: uppercase;
   border-bottom: 1px solid rgba(27, 69, 199, 0.2);
@@ -576,12 +576,12 @@ body:after {
   transition: 0.2s;
 }
 .language-list a:hover {
-  color: #B01818;
-  border-bottom-color: #B01818;
+  color: #b01818;
+  border-bottom-color: #b01818;
 }
 
 .header-top {
-  background: #F8F8F8;
+  background: #f8f8f8;
   display: flex;
   align-items: center;
   justify-content: flex-end;

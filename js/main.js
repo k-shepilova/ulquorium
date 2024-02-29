@@ -33,7 +33,6 @@ function scaleSlides(swiper) {
     });
 }
 
-// Initialize Swiper
 const mySwiper = new Swiper('.swiper', {
     slidesPerView: 1,
     centeredSlides: true,
