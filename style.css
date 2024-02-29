@@ -1101,6 +1101,7 @@ h1 em + span {
 }
 .project.slider-project .project-slider .slide-img {
   align-items: unset;
+  width: 100%;
   height: 100%;
 }
 @media (min-width: 740px) {
