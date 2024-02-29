@@ -12,10 +12,10 @@
     "lefttop righttop righttop"
     ".  righttop righttop";
     grid-auto-rows: auto;
-    grid-template-columns:28.6vw 1fr 1fr;
+    grid-template-columns:28.3vw 1fr 1fr;
   }
   @media (min-width: 980px) {
-    grid-template-columns:  min(28.6vw, 280px) 1fr 1fr;
+    grid-template-columns:  min(28.3vw, 276px) 1fr 1fr;
   }
   @media (min-width: 1360px) {
     row-gap: 40px;
@@ -37,8 +37,7 @@
     @media (min-width: 1360px) {
       grid-template-areas:
     "lefttop righttop rightbottom"
-    "leftbottom  righttop rightbottom"
-    ".  righttop rightbottom";
+    "leftbottom  righttop rightbottom";
     }
     &.mobile-first-hidden {
       grid-template-areas:
@@ -114,10 +113,13 @@
       grid-template-areas:
    "lefttop righttop rightmiddle rightbottom"
     ".  righttop rightmiddle rightbottom";
-      grid-template-columns:  min(28.6vw, 280px) 1fr 1fr 1fr;
+      grid-template-columns:  min(28.3vw, 276px) 1fr 1fr 1fr;
     }
     .image-holder {
       background-color: #523dd7;
+      @media (min-width: 1920px) {
+        padding-top: 560px;
+      }
       img {
         object-fit: cover;
         object-position: left;
@@ -192,6 +194,9 @@
       @media (min-width: 740px) {
         width: 105%;
       }
+      @media (min-width: 860px) {
+        width: 134%;
+      }
       @media (min-width: 1360px) {
         width: 100%;
       }
@@ -207,6 +212,9 @@
         img {
           padding: 45px;
           display: block;
+          @media (min-width: 540px) {
+            padding: 15px;
+          }
           @media (min-width: 740px) {
             padding: 0;
           }
@@ -225,7 +233,7 @@
     }
     @media (min-width: 860px) {
       align-self: flex-start;
-      padding-right: 40px;
+      padding-right: 30px;
     }
     @media (min-width: 1280px) {
       margin-bottom: 0;
@@ -244,7 +252,7 @@
       left: 8px;
       @media (min-width: 540px) {
         position: static;
-        padding-left: 20px;
+        padding-left: 10px;
         width: 43%;
         justify-content: flex-end;
       }
@@ -276,6 +284,9 @@
   .text {
     font-size: 15px;
     line-height: 1.53;
+    @media (min-width: 860px) {
+      font-size: 16px;
+    }
     p {
       &:last-child {
         margin-bottom: 0;
@@ -301,6 +312,9 @@
       border-radius: 8px;
       padding-top: 420px;
     }
+    @media (min-width: 860px) {
+      margin-bottom: 0;
+    }
     @media (min-width: 1280px) {
       margin-bottom: 0;
     }
@@ -311,10 +325,10 @@
       padding-top: 30vw;
     }
     .logo {
-      width: 64px;
+      width: 60px;
       height: 72px;
       position: absolute;
-      top: 24px;
+      top: 19px;
       left: 24px;
       display: none;
       @media (min-width: 540px) {
@@ -341,7 +355,7 @@
       &.icon {
         width: 105px;
         height: 117px;
-        top: 50%;
+        top: 54%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
@@ -355,7 +369,16 @@
   .links {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 14px 0 0;
+    @media (min-width: 860px) {
+      font-size: 16px;
+    }
+    li{
+      margin-bottom: 10px;
+       &:last-child {
+           margin-bottom: 0;
+         }
+    }
     &.mobile-hidden {
       @media (min-width: 860px) {
         display: block;
@@ -413,6 +436,12 @@
   line-height: 1.66;
   letter-spacing: 0;
   text-transform: uppercase;
+  @media (min-width: 540px) {
+    margin-bottom: 0;
+  }
+  @media (min-width: 860px) {
+    margin-bottom: 6px;
+  }
   li {
     background-color: $beige;
     border: 1px solid $gray;
@@ -426,6 +455,7 @@
   margin-top: 41px;
   @media (min-width: 860px) {
     display: flex;
+    margin-top: 80px;
   }
   .project-title {
     color: $brown;
@@ -466,6 +496,7 @@
       border: 1px solid #e3e3e3;
       border-radius: 12px;
       position: relative;
+      transition: 0.2s;
       @media (min-width: 540px) {
         border-radius: 8px;
       }
@@ -475,6 +506,12 @@
         justify-content: center;
         align-items: center;
       }
+       &:hover
+         {
+        .icon{
+          filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+        }
+        }
     }
     .icon {
       position: absolute;
@@ -482,6 +519,10 @@
       left: 8px;
       width: 16px;
       height: 16px;
+      @media (min-width: 1920px) {
+        top: 14px;
+        left: 16px;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -494,19 +535,27 @@
       font-size: 12px;
       font-weight: 300;
       position: absolute;
-      top: 5px;
+      top: 6px;
       left: 8px;
+      @media (min-width: 1920px) {
+        top: 14px;
+        left: 16px;
+      }
     }
     .link {
       display: none;
-      @media (min-width: 1360px) {
+      @media (min-width: 1280px) {
         display: block;
         position: absolute;
         bottom: 0;
         left: 0;
-        padding-left: 16px;
-        padding-bottom: 16px;
+        padding-left: 6px;
+        padding-bottom: 3px;
         text-decoration: underline;
+      }
+      @media (min-width: 1920px) {
+        padding-left: 15px;
+        padding-bottom: 6px;
       }
     }
     img {
@@ -523,7 +572,7 @@
       }
       @media (min-width: 860px) {
         width: 80%;
-        height: 40%;
+        height: 50%;
         top: 55%;
       }
       @media (min-width: 1280px) {
@@ -555,6 +604,12 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  @media (min-width: 540px) {
+    top: 54%;
+  }
+  @media (min-width: 860px) {
+    top:49%;
+  }
   &:after {
     content: "";
     background-image: url("./images/left.svg");
@@ -583,34 +638,34 @@
 .swiper-button-prev {
   left: 0;
   @media (min-width: 540px) {
-    left: 50px;
+    left: 42px;
   }
   @media (min-width: 740px) {
     left: calc(50% - 20.59vw);
     transform: translateX(-50%);
   }
   @media (min-width: 860px) {
-    left: calc(50% - 15vw);
+    left: calc(50% - 17vw);
   }
   @media (min-width: 980px) {
-    left: calc(50% - 13vw);
+    left: calc(50% - 15vw);
   }
 }
 
 .swiper-button-next {
   right: 0;
   @media (min-width: 540px) {
-    right: 50px;
+    right: 42px;
   }
   @media (min-width: 740px) {
     right: calc(50% - 20.59vw);
     transform: translateX(-50%);
   }
   @media (min-width: 860px) {
-    right: calc(50% - 15vw);
+    right: calc(50% - 18vw);
   }
   @media (min-width: 980px) {
-    right: calc(50% - 13vw);
+    right: calc(50% - 15vw);
   }
   &:after {
     transform: rotate(180deg);
@@ -773,6 +828,9 @@
   align-items: center;
   @media (min-width: 740px) {
     display: flex;
+  }
+  @media (min-width:860px) {
+    letter-spacing: 0.1em;
   }
   @media (min-width: 980px) {
     font-size: 24.375vw;
