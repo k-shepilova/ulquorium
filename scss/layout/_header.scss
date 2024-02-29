@@ -428,5 +428,8 @@ h1 {
       display: inline-block;
       margin-right: -29px;
     }
+    + span {
+      display: block;
+    }
   }
 }

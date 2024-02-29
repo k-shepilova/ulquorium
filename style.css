@@ -885,6 +885,9 @@ h1 em {
     margin-right: -29px;
   }
 }
+h1 em + span {
+  display: block;
+}
 
 .project {
   margin-bottom: 16px;
@@ -1348,7 +1351,6 @@ h1 em {
   margin-bottom: 8px;
 }
 .project-title a {
-  color: #1B45C7;
   text-decoration: underline;
 }
 
