@@ -38,11 +38,15 @@ p {
 
 a {
   color: $blue;
-  display: inline-block;
+  border-bottom: 1px solid rgba($blue, 0.2);
+  line-height: 1.2;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.3s;
   &:hover {
     color: $red;
+    border-bottom-color: $red;
+    text-decoration: none;
+    transition: 0.1s;
   }
 }
 
