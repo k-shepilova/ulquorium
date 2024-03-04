@@ -39,6 +39,12 @@
     "lefttop righttop rightbottom"
     "leftbottom  righttop rightbottom";
     }
+    @media (min-width: 1570px) {
+      grid-template-areas:
+    "lefttop righttop rightbottom"
+    "leftbottom  righttop rightbottom"
+    ".  righttop rightbottom";
+    }
     &.mobile-first-hidden {
       grid-template-areas:
     "leftbottom"
@@ -154,7 +160,25 @@
       padding-left: 0;
       padding-right: 0;
       position: relative;
+      &:hover {
+        .project-slider {
+          .slide-img {
+            img {
+              width: 110%;
+              height: 110%;
+              transition: 0.2s;
+            }
+          }
+        }
+        .bg {
+          --startColor: #180c4f;
+          --endColor: #640859;
+          transition: --startColor 0.2s, --endColor 0.2s;
+        }
+      }
       .bg {
+        background: radial-gradient(circle, var(--startColor) 0%, var(--endColor) 100%);
+        transition: --startColor 0.4s, --endColor 0.4s;
         &.decor-table {
           &:before {
             content: "";
@@ -202,8 +226,12 @@
       }
       .slide-img {
         align-items: unset;
+        max-width: unset;
         width: 100%;
         height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transition: 0.4s;
         @media (min-width: 740px) {
           max-height: 45.12vw;
         }
@@ -245,12 +273,15 @@
         }
       }
       &:hover {
-        transition: 0.1s;
-        .bg, .img, .mobile-img {
+        transition: 0.2s;
+        &:after {
+          transition: 0.4s;
+        }
+        .img, .mobile-img {
           img {
             width: 110%;
             height: 110%;
-            transition: 0.1s;
+            transition: 0.2s;
           }
         }
       }
@@ -341,7 +372,7 @@
     left: 0;
     padding: 111.12% 20px 0;
     height: 0;
-    transition: 0.3s;
+    transition: 0.4s;
     @media (min-width: 540px) {
       border-radius: 8px;
       padding-top: 420px;
@@ -368,6 +399,7 @@
       border-radius: 12px;
       top: 0;
       left: 0;
+      transition: 0.4s;
       @media (min-width: 540px) {
         border-radius: 8px;
       }
@@ -441,7 +473,7 @@
       max-width: none;
       object-fit: contain;
       object-position: center;
-      transition: 0.3s;
+      transition: 0.4s;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -574,7 +606,7 @@
       border: 1px solid #e3e3e3;
       border-radius: 12px;
       position: relative;
-      transition: 0.3s;
+      transition: 0.4s;
       @media (min-width: 540px) {
         border-radius: 8px;
       }
@@ -585,11 +617,12 @@
         align-items: center;
       }
       &:hover {
-        background: rgba(#DDBFBF, 0.8);
+        background: #f1e5e5;
         border: 1px solid #ddbfbf;
-        transition: 0.1s;
+        transition: 0.2s;
         .icon {
           filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+          transition: 0.2s;
         }
         .link {
           border-bottom-color: $red;
@@ -599,12 +632,13 @@
     }
     .icon {
       position: absolute;
-      top: 6px;
+      top: 8px;
       left: 8px;
       width: 16px;
       height: 16px;
-      @media (min-width: 1920px) {
-        top: 14px;
+      transition: 0.4s;
+      @media (min-width: 1360px) {
+        top: 16px;
         left: 16px;
       }
       img {
@@ -619,10 +653,10 @@
       font-size: 12px;
       font-weight: 300;
       position: absolute;
-      top: 6px;
+      top: 8px;
       left: 8px;
-      @media (min-width: 1920px) {
-        top: 14px;
+      @media (min-width: 1360px) {
+        top: 16px;
         left: 16px;
       }
     }
@@ -635,12 +669,12 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        margin-left: 6px;
-        margin-bottom: 3px;
+        margin-left: 8px;
+        margin-bottom: 4px;
       }
-      @media (min-width: 1920px) {
-        margin-left: 15px;
-        margin-bottom: 6px;
+      @media (min-width: 1360px) {
+        margin-left: 16px;
+        margin-bottom: 8px;
       }
     }
     img {
@@ -832,13 +866,21 @@
 
 .blimb-project {
   .image-holder {
-    background: linear-gradient(143deg, rgba(237, 242, 251, 1) 70%, rgba(77, 118, 196, 0.34) 100%);
+    background: linear-gradient(121deg, rgba(181, 206, 255, 0.10) 75.24%, rgb(181, 206, 255, .7) 100%);
     position: relative;
     @media (min-width: 1360px) {
       padding-top: 37.5vw;
     }
     @media (min-width: 2400px) {
       padding-top: 36.67vw;
+    }
+    &:hover {
+      background-color: rgba(147, 0, 0, 0.2);
+      &.border-darker {
+        &:after {
+          border: 1px solid rgb(125, 0, 0);
+        }
+      }
     }
     &:before {
       content: "";
@@ -851,6 +893,10 @@
       height: 100%;
     }
   }
+}
+
+.noise {
+  object-fit: cover;
 }
 
 .animation {

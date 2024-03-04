@@ -309,6 +309,16 @@ template {
   display: none;
 }
 
+@property --startColor {
+  syntax: "<color>";
+  initial-value: #1A0E50;
+  inherits: false;
+}
+@property --endColor {
+  syntax: "<color>";
+  initial-value: #6E1563;
+  inherits: false;
+}
 html,
 body {
   height: 100%;
@@ -696,6 +706,9 @@ body:after {
   height: 4.375vw;
   min-width: 40px;
   min-height: 40px;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
   position: absolute;
   left: 16px;
   top: 0;
@@ -716,7 +729,7 @@ body:after {
     display: inline-block;
     width: 4vw;
     height: 4vw;
-    margin-right: calc(-1.35vw - 4px);
+    margin-right: -1.35vw;
   }
 }
 @media (min-width: 1280px) {
@@ -727,19 +740,33 @@ body:after {
 }
 @media (min-width: 1360px) {
   .info-holder .image {
-    margin-right: calc(-1.5vw - 4px);
+    margin-right: -1.5vw;
   }
 }
 @media (min-width: 2400px) {
   .info-holder .image {
-    margin-right: calc(-1.7vw - 4px);
+    margin-right: -1.7vw;
   }
 }
+.info-holder .image:hover img {
+  width: 110%;
+  height: 110%;
+  transition: 0.2s;
+}
 .info-holder .image img {
+  max-width: unset;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   display: block;
+  transition: 0.4s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @media (min-width: 740px) {
   .info-holder .text {
@@ -942,6 +969,11 @@ h1 em + span {
     grid-template-areas: "lefttop righttop rightbottom" "leftbottom  righttop rightbottom";
   }
 }
+@media (min-width: 1570px) {
+  .project.two-col {
+    grid-template-areas: "lefttop righttop rightbottom" "leftbottom  righttop rightbottom" ".  righttop rightbottom";
+  }
+}
 .project.two-col.mobile-first-hidden {
   grid-template-areas: "leftbottom" " rightbottom";
 }
@@ -1059,6 +1091,20 @@ h1 em + span {
   padding-right: 0;
   position: relative;
 }
+.project.slider-project .image-holder:hover .project-slider .slide-img img {
+  width: 110%;
+  height: 110%;
+  transition: 0.2s;
+}
+.project.slider-project .image-holder:hover .bg {
+  --startColor: #180c4f;
+  --endColor: #640859;
+  transition: --startColor 0.2s, --endColor 0.2s;
+}
+.project.slider-project .image-holder .bg {
+  background: radial-gradient(circle, var(--startColor) 0%, var(--endColor) 100%);
+  transition: --startColor 0.4s, --endColor 0.4s;
+}
 .project.slider-project .image-holder .bg.decor-table:before {
   content: "";
   width: 100%;
@@ -1116,8 +1162,14 @@ h1 em + span {
 }
 .project.slider-project .project-slider .slide-img {
   align-items: unset;
+  max-width: unset;
   width: 100%;
   height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  transition: 0.4s;
 }
 @media (min-width: 740px) {
   .project.slider-project .project-slider .slide-img {
@@ -1151,12 +1203,15 @@ h1 em + span {
   border-color: #3722bc;
 }
 .project:not(.nda-project) .image-holder:hover {
-  transition: 0.1s;
+  transition: 0.2s;
 }
-.project:not(.nda-project) .image-holder:hover .bg img, .project:not(.nda-project) .image-holder:hover .img img, .project:not(.nda-project) .image-holder:hover .mobile-img img {
+.project:not(.nda-project) .image-holder:hover:after {
+  transition: 0.4s;
+}
+.project:not(.nda-project) .image-holder:hover .img img, .project:not(.nda-project) .image-holder:hover .mobile-img img {
   width: 110%;
   height: 110%;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 .project .item-lt, .project .item-lb {
   position: relative;
@@ -1255,7 +1310,7 @@ h1 em + span {
   left: 0;
   padding: 111.12% 20px 0;
   height: 0;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 @media (min-width: 540px) {
   .project .image-holder {
@@ -1293,6 +1348,7 @@ h1 em + span {
   border-radius: 12px;
   top: 0;
   left: 0;
+  transition: 0.4s;
 }
 @media (min-width: 540px) {
   .project .image-holder:after {
@@ -1362,7 +1418,7 @@ h1 em + span {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
-  transition: 0.3s;
+  transition: 0.4s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1508,7 +1564,7 @@ h1 em + span {
   border: 1px solid #e3e3e3;
   border-radius: 12px;
   position: relative;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 @media (min-width: 540px) {
   .old-projects .item a {
@@ -1524,12 +1580,13 @@ h1 em + span {
   }
 }
 .old-projects .item a:hover {
-  background: rgba(221, 191, 191, 0.8);
+  background: #f1e5e5;
   border: 1px solid #ddbfbf;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 .old-projects .item a:hover .icon {
   filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+  transition: 0.2s;
 }
 .old-projects .item a:hover .link {
   border-bottom-color: #b01818;
@@ -1537,14 +1594,15 @@ h1 em + span {
 }
 .old-projects .item .icon {
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: 8px;
   width: 16px;
   height: 16px;
+  transition: 0.4s;
 }
-@media (min-width: 1920px) {
+@media (min-width: 1360px) {
   .old-projects .item .icon {
-    top: 14px;
+    top: 16px;
     left: 16px;
   }
 }
@@ -1560,12 +1618,12 @@ h1 em + span {
   font-size: 12px;
   font-weight: 300;
   position: absolute;
-  top: 6px;
+  top: 8px;
   left: 8px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 1360px) {
   .old-projects .item .year {
-    top: 14px;
+    top: 16px;
     left: 16px;
   }
 }
@@ -1580,14 +1638,14 @@ h1 em + span {
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-left: 6px;
-    margin-bottom: 3px;
+    margin-left: 8px;
+    margin-bottom: 4px;
   }
 }
-@media (min-width: 1920px) {
+@media (min-width: 1360px) {
   .old-projects .item .link {
-    margin-left: 15px;
-    margin-bottom: 6px;
+    margin-left: 16px;
+    margin-bottom: 8px;
   }
 }
 .old-projects .item img {
@@ -1811,7 +1869,7 @@ h1 em + span {
 }
 
 .blimb-project .image-holder {
-  background: linear-gradient(143deg, rgb(237, 242, 251) 70%, rgba(77, 118, 196, 0.34) 100%);
+  background: linear-gradient(121deg, rgba(181, 206, 255, 0.1) 75.24%, rgba(181, 206, 255, 0.7) 100%);
   position: relative;
 }
 @media (min-width: 1360px) {
@@ -1824,6 +1882,12 @@ h1 em + span {
     padding-top: 36.67vw;
   }
 }
+.blimb-project .image-holder:hover {
+  background-color: rgba(147, 0, 0, 0.2);
+}
+.blimb-project .image-holder:hover.border-darker:after {
+  border: 1px solid rgb(125, 0, 0);
+}
 .blimb-project .image-holder:before {
   content: "";
   background-image: url(./images/noise.png);
@@ -1833,6 +1897,11 @@ h1 em + span {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.noise {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .animation {

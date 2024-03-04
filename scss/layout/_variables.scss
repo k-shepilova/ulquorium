@@ -13,3 +13,15 @@ $second-font: "Cormorant Garamond", "Times", "Baskerville", "Georgia", serif;
 $third-font: "Cormorant", "Times", "Baskerville", "Georgia", serif;
 $fourth-font: "Manrope", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
 $inter-font: "Inter", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+
+@property --startColor {
+  syntax: '<color>';
+  initial-value: #1A0E50;
+  inherits: false;
+}
+
+@property --endColor {
+  syntax: '<color>';
+  initial-value: #6E1563;
+  inherits: false;
+}
