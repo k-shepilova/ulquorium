@@ -1806,7 +1806,7 @@ h1 em + span {
 .nda-project .item-rt:hover .nda-title {
   color: #fff;
   transform: translate(-50%, -50%) scale(1.1);
-  transition: 0.1s;
+  transition: 0.2s;
 }
 .nda-project .image-holder .bg:before, .nda-project .image-holder .bg:after {
   content: "";
@@ -1898,6 +1898,10 @@ h1 em + span {
   width: 100%;
   height: 100%;
 }
+.blimb-project .image-holder .noise {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .noise {
   -o-object-fit: cover;
@@ -1962,7 +1966,7 @@ h1 em + span {
   font-size: 256px;
   text-align: center;
   margin: 0;
-  transition: 0.3s;
+  transition: 0.4s;
   position: absolute;
   top: 50%;
   left: 55%;
