@@ -160,7 +160,7 @@
       padding-left: 0;
       padding-right: 0;
       position: relative;
-      &:hover {
+      &:hover, &.hover-effect {
         .project-slider {
           .slide-img {
             img {
@@ -253,8 +253,8 @@
   }
   &:not(.nda-project) {
     &.sm-height {
-      .image-holder {
-        &:hover {
+      a.image-holder {
+        &:hover, &.hover-effect {
           .bg {
             img {
               width: 105%;
@@ -264,7 +264,7 @@
         }
       }
     }
-    .image-holder {
+    a.image-holder {
       &.border-purple {
         &:hover {
           &:after {
@@ -272,7 +272,7 @@
           }
         }
       }
-      &:hover {
+      &:hover, &.hover-effect {
         transition: 0.2s;
         &:after {
           transition: 0.4s;
@@ -358,6 +358,15 @@
       }
     }
   }
+  a.image-holder {
+    &:not(.border-none) {
+      &:hover, &.hover-effect {
+        &:after {
+          border-color: rgba($black, 0.3);
+        }
+      }
+    }
+  }
   .image-holder {
     border: none;
     width: 100%;
@@ -402,6 +411,16 @@
       transition: 0.4s;
       @media (min-width: 540px) {
         border-radius: 8px;
+      }
+    }
+    &.lg-mobile {
+      .img {
+        img {
+          width: 150%;
+          @media (min-width: 860px) {
+            width: 100%;
+          }
+        }
       }
     }
     &.border-none {
@@ -492,6 +511,14 @@
       &:last-child {
         margin-bottom: 0;
       }
+      &.title-hover {
+        a.hover-effect {
+          color: $red;
+          border-bottom-color: $red;
+          text-decoration: none;
+          transition: 0.1s;
+        }
+      }
     }
     &.mobile-hidden {
       @media (min-width: 860px) {
@@ -502,23 +529,37 @@
 }
 
 .soon-label {
-  color: $brown;
+  color: rgba($white, 0.3);
   font-family: $fourth-font;
-  background-color: $beige;
-  border: 1px solid $gray;
   display: inline-block;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.66;
+  font-weight: 700;
+  font-size: 2.667vw;
+  line-height: 2;
   letter-spacing: 0;
   text-transform: uppercase;
-  padding: 0.33em 0.66em;
   margin: 0;
-  border-radius: 8px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  //color: $brown;
+  //font-family: $fourth-font;
+  //background-color: $beige;
+  //border: 1px solid $gray;
+  //display: inline-block;
+  //font-weight: 300;
+  //font-size: 12px;
+  //line-height: 1.66;
+  //letter-spacing: 0;
+  //text-transform: uppercase;
+  //padding: 0.33em 0.66em;
+  //margin: 0;
+  //border-radius: 8px;
+  //position: absolute;
+  //top: 50%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
 }
 
 .project-title {
@@ -528,6 +569,16 @@
   line-height: 1;
   font-size: 24px;
   margin-bottom: 8px;
+  a{
+    width: 100%;
+    &.hover-effect
+    {
+      color: $red;
+      border-bottom-color: $red;
+      text-decoration: none;
+      transition: 0.1s;
+    }
+  }
 }
 
 .tags {
@@ -638,7 +689,7 @@
       height: 16px;
       transition: 0.4s;
       @media (min-width: 1360px) {
-        top: 16px;
+        top: 12px;
         left: 16px;
       }
       img {
@@ -796,8 +847,8 @@
   @media (min-width: 860px) {
     grid-template-areas: "lefttop righttop righttop";
   }
-  .item-rt {
-    &:hover {
+  .image-holder {
+    &:hover, &.hover-effect {
       .nda-title {
         color: $white;
         transform: translate(-50%, -50%) scale(1.1);
@@ -874,7 +925,7 @@
     @media (min-width: 2400px) {
       padding-top: 36.67vw;
     }
-    &:hover {
+    &:hover, &.hover-effect {
       background-color: rgba(147, 0, 0, 0.2);
       &.border-darker {
         &:after {
@@ -939,7 +990,7 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    transform: translate(15%, 0);
+    //transform: translate(15%, 0);
     animation-duration: 24s;
     animation-name: ballmoves;
     animation-iteration-count: infinite;
@@ -1035,7 +1086,7 @@
   }
   14% {
     top: 40%;
-    left: 98%;
+    left: calc(100% - 40px);
   }
   28% {
     top: 30%;
@@ -1046,7 +1097,7 @@
     left: 20%;
   }
   43% {
-    top: 97%;
+    top: calc(100% - 40px);
     left: 60%;
   }
   53% {
@@ -1055,10 +1106,10 @@
   }
   56% {
     top: 10%;
-    left: 98%;
+    left: calc(100% - 40px);
   }
   68% {
-    top: 95%;
+    top: calc(100% - 40px);
     left: 30%;
   }
   72% {
@@ -1067,7 +1118,7 @@
   }
   86% {
     top: 70%;
-    left: 98%;
+    left: calc(100% - 40px);
   }
   100% {
     top: 45%;

@@ -65,3 +65,65 @@ main {
     display: block;
   }
 }
+
+.icon-copy {
+  white-space: nowrap;
+  &:before {
+    content: "";
+    filter: invert(22%) sepia(98%) saturate(3314%) hue-rotate(226deg) brightness(79%) contrast(97%);
+    background-image: url("./images/icon-copy.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    margin-bottom: -1px;
+    transition: 0.3s;
+  }
+  span {
+    border-bottom: 1px dashed rgba($blue, 0.2);
+    transition: 0.3s;
+  }
+}
+
+.icon-external {
+  white-space: nowrap;
+  &:after {
+    content: "";
+    filter: invert(22%) sepia(98%) saturate(3314%) hue-rotate(226deg) brightness(79%) contrast(97%);
+    background-image: url("./images/external-link.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    margin-bottom: -2px;
+    transition: 0.3s;
+  }
+  span {
+    border-bottom: 1px solid rgba($blue, 0.2);
+    transition: 0.3s;
+  }
+}
+
+.copy-modal{
+  color: $black;
+  background: $white;
+  box-shadow: 0 8px 8px rgba($black, 0.25);
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  border-radius: 8px;
+  position: absolute;
+  font-size: 16px;
+  padding: 4px 12px;
+  visibility: hidden;
+  min-width: 70px;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.2s;
+}
