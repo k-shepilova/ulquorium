@@ -264,6 +264,18 @@
         }
       }
     }
+    a.image-holder.lg-mobile {
+      &:hover {
+        .img {
+          img {
+            width: 160%;
+            @media (min-width: 860px) {
+              width: 110%;
+            }
+          }
+        }
+      }
+    }
     a.image-holder {
       &.border-purple {
         &:hover {
@@ -569,10 +581,9 @@
   line-height: 1;
   font-size: 24px;
   margin-bottom: 8px;
-  a{
+  a {
     width: 100%;
-    &.hover-effect
-    {
+    &.hover-effect {
       color: $red;
       border-bottom-color: $red;
       text-decoration: none;

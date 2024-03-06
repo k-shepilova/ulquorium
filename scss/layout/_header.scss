@@ -391,11 +391,13 @@ body {
       }
       @media (min-width: 1920px) {
         column-count: 2;
+        column-gap: 18px;
         width: 85%;
       }
       @media (min-width: 2400px) {
         width: 84%;
         padding: 0 12px;
+        column-gap: 24px;
       }
     }
     .col-right {
@@ -429,7 +431,7 @@ body {
       a {
         border-bottom: none;
         &:hover {
-          &:before, &:after{
+          &:before, &:after {
             filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
             transition: 0.3s;
           }

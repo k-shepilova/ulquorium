@@ -899,6 +899,8 @@ body:after {
   .info-holder .text .col-left {
     -moz-column-count: 2;
          column-count: 2;
+    -moz-column-gap: 18px;
+         column-gap: 18px;
     width: 85%;
   }
 }
@@ -906,6 +908,8 @@ body:after {
   .info-holder .text .col-left {
     width: 84%;
     padding: 0 12px;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
   }
 }
 @media (min-width: 740px) {
@@ -1287,6 +1291,14 @@ h1 em + span {
 .project:not(.nda-project).sm-height a.image-holder:hover .bg img, .project:not(.nda-project).sm-height a.image-holder.hover-effect .bg img {
   width: 105%;
   height: 105%;
+}
+.project:not(.nda-project) a.image-holder.lg-mobile:hover .img img {
+  width: 160%;
+}
+@media (min-width: 860px) {
+  .project:not(.nda-project) a.image-holder.lg-mobile:hover .img img {
+    width: 110%;
+  }
 }
 .project:not(.nda-project) a.image-holder.border-purple:hover:after {
   border-color: #3722bc;
