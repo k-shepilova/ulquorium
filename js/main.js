@@ -1,72 +1,82 @@
-document.querySelector('.nav-opener').addEventListener('click', function (event) {
-    event.stopPropagation();
-    document.querySelector('body').classList.add('active');
+document.addEventListener('DOMContentLoaded', function () {
+    handleMenu();
+    initSwiper();
+    copyText();
+    correspondHoverEffects();
+    fadeInElements();
 });
 
-document.querySelector('.close-btn').addEventListener('click', function () {
-    document.querySelector('body').classList.remove('active');
-});
 
-document.addEventListener('click', function (event) {
-    var isClickInsideMenu = document.querySelector('.mobile-menu').contains(event.target);
-    var isMenuActive = document.querySelector('body').classList.contains('active');
+function handleMenu() {
+    const body = document.querySelector('body');
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-    if (!isClickInsideMenu && isMenuActive) {
-        document.querySelector('body').classList.remove('active');
+    function toggleBodyActive() {
+        body.classList.toggle('active');
     }
-});
 
-function scaleSlides(swiper) {
-    const isMobileView = swiper.params.slidesPerView === 1;
-
-    swiper.slides.forEach((slide) => {
-        var scale, opacity;
-        if (slide === swiper.slides[swiper.activeIndex]) {
-            scale = 1;
-            opacity = 1;
-        } else {
-            scale = isMobileView ? 1 : 0.8;
-            opacity = isMobileView ? 1 : 0.6;
+    function closeMenu(event) {
+        if (!mobileMenu.contains(event.target) && body.classList.contains('active')) {
+            toggleBodyActive();
         }
-        slide.style.transform = `scale(${scale})`;
-        slide.style.opacity = opacity;
+    }
+
+    document.querySelector('.nav-opener').addEventListener('click', function (event) {
+        event.stopPropagation();
+        toggleBodyActive();
+    });
+
+    document.querySelector('.close-btn').addEventListener('click', toggleBodyActive);
+
+    document.addEventListener('click', closeMenu);
+}
+
+function initSwiper() {
+    const swiperContainer = document.querySelector('.swiper');
+
+    function scaleSlides(swiper) {
+        const isMobileView = swiper.params.slidesPerView === 1;
+        const scaleFactor = isMobileView ? 1 : 0.8;
+        const opacityFactor = isMobileView ? 1 : 0.6;
+
+        swiper.slides.forEach((slide) => {
+            const scale = slide === swiper.slides[swiper.activeIndex] ? 1 : scaleFactor;
+            const opacity = slide === swiper.slides[swiper.activeIndex] ? 1 : opacityFactor;
+            slide.style.transform = `scale(${scale})`;
+            slide.style.opacity = opacity;
+        });
+    }
+
+    const mySwiper = new Swiper(swiperContainer, {
+        slidesPerView: 1,
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 3,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            740: {
+                slidesPerView: 3,
+                centeredSlides: true,
+                loop: true,
+                loopedSlides: 3
+            }
+        },
+        on: {
+            init: scaleSlides,
+            slideChange: scaleSlides,
+            resize: scaleSlides
+        }
     });
 }
 
-const mySwiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    centeredSlides: true,
-    loop: true,
-    loopedSlides: 3,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        740: {
-            slidesPerView: 3,
-            centeredSlides: true,
-            loop: true,
-            loopedSlides: 3
-        }
-    },
-    on: {
-        init: function () {
-            scaleSlides(this);
-        },
-        slideChange: function () {
-            scaleSlides(this);
-        },
-        resize: function () {
-            scaleSlides(this);
-        }
-    }
-});
+function copyText() {
+    const copyTextLinks = document.querySelectorAll('.copy-text');
+    const copyModal = document.querySelector('.copy-modal');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.copy-text');
-    const modal = document.querySelector('.copy-modal');
-    links.forEach(function (link) {
+    copyTextLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
             event.preventDefault();
 
@@ -74,35 +84,41 @@ document.addEventListener('DOMContentLoaded', function () {
             const linkCenterX = linkRect.left + (linkRect.width / 2);
             const linkCenterY = linkRect.top + (linkRect.height / 2);
 
-            modal.style.left = window.scrollX + linkCenterX - (modal.offsetWidth / 2) + 'px';
-            modal.style.top = window.scrollY + linkRect.top - (modal.offsetHeight / 2) + 'px';
+            copyModal.style.left = window.scrollX + linkCenterX - (copyModal.offsetWidth / 2) + 'px';
+            copyModal.style.top = window.scrollY + linkRect.top - (copyModal.offsetHeight / 2) + 'px';
 
-            modal.style.transition = '0.2s';
-            modal.style.visibility = 'visible';
-            modal.style.opacity = '1';
-            modal.style.zIndex = '1';
+            copyModal.style.transition = '0.2s';
+            copyModal.style.visibility = 'visible';
+            copyModal.style.opacity = '1';
+            copyModal.style.zIndex = '1';
 
             navigator.clipboard.writeText(link.textContent).then(function () {
                 setTimeout(function () {
-                    modal.style.transition = '2s';
-                    modal.style.opacity = '0';
-                    modal.style.visibility = 'hidden';
+                    copyModal.style.transition = '2s';
+                    copyModal.style.opacity = '0';
+                    copyModal.style.visibility = 'hidden';
                 }, 2000);
             }).catch(function (error) {
                 console.error('Error copying text: ', error);
-                modal.style.opacity = '0';
-                modal.style.visibility = 'hidden';
+                copyModal.style.opacity = '0';
+                copyModal.style.visibility = 'hidden';
             });
+
+            link.classList.add('temp-hover');
+
+            setTimeout(() => {
+                link.classList.remove('temp-hover');
+            }, 4000);
         });
     });
-});
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    const titleLinks = document.querySelectorAll('.title-hover a');
+function correspondHoverEffects() {
+    const titleHoverLinks = document.querySelectorAll('.title-hover a');
     const imageHolders = document.querySelectorAll('.image-hover');
 
-    if (titleLinks.length === imageHolders.length) {
-        titleLinks.forEach((titleLink, index) => {
+    if (titleHoverLinks.length === imageHolders.length) {
+        titleHoverLinks.forEach((titleLink, index) => {
             const correspondingImageHolder = imageHolders[index];
 
             const addHoverEffect = () => {
@@ -122,5 +138,33 @@ document.addEventListener('DOMContentLoaded', function () {
             correspondingImageHolder.addEventListener('mouseout', removeHoverEffect);
         });
     }
-});
+}
 
+function fadeInElements() {
+    const showElements = document.querySelectorAll('.show');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= window.innerHeight &&
+            rect.bottom >= 0 &&
+            rect.left <= window.innerWidth &&
+            rect.right >= 0
+        );
+    }
+
+    showElements.forEach((element, index) => {
+        if (isInViewport(element)) {
+            element.style.transitionDelay = index * 0.3 + "s";
+            element.style.opacity = '1';
+        } else {
+            window.addEventListener('scroll', () => {
+                if (isInViewport(element)) {
+                    element.style.transitionDelay =  0.1 + "s";
+                    element.style.opacity = '1';
+                    window.removeEventListener('scroll', () => {});
+                }
+            });
+        }
+    });
+}

@@ -68,6 +68,25 @@ main {
 
 .icon-copy {
   white-space: nowrap;
+  &:hover{
+    color: $blue;
+    border-bottom-color: $blue;
+    transition: 0.3s;
+  }
+  &.temp-hover{
+    color: $red;
+    border-bottom-color: $red;
+    text-decoration: none;
+    transition: 0.1s;
+    &:before, &:after {
+      filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+      transition: 0.1s;
+    }
+    span {
+      border-color: $red;
+      transition: 0.1s;
+    }
+  }
   &:before {
     content: "";
     filter: invert(22%) sepia(98%) saturate(3314%) hue-rotate(226deg) brightness(79%) contrast(97%);
@@ -126,4 +145,9 @@ main {
   opacity: 0;
   z-index: -1;
   transition: 0.2s;
+}
+
+.show {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }

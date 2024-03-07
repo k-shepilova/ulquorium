@@ -212,8 +212,8 @@ body {
 }
 
 .nav-opener {
-  border: 5px solid $light;
-  background-color: $light;
+  border: 5px solid transparent;
+  background-color: transparent;
   font-size: 0;
   width: 26px;
   height: 26px;
@@ -430,16 +430,6 @@ body {
       }
       a {
         border-bottom: none;
-        &:hover {
-          &:before, &:after {
-            filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
-            transition: 0.3s;
-          }
-          span {
-            border-color: $red;
-            transition: 0.1s;
-          }
-        }
       }
     }
   }

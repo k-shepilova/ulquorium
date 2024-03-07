@@ -395,6 +395,25 @@ main {
 .icon-copy {
   white-space: nowrap;
 }
+.icon-copy:hover {
+  color: #1b45c7;
+  border-bottom-color: #1b45c7;
+  transition: 0.3s;
+}
+.icon-copy.temp-hover {
+  color: #b01818;
+  border-bottom-color: #b01818;
+  text-decoration: none;
+  transition: 0.1s;
+}
+.icon-copy.temp-hover:before, .icon-copy.temp-hover:after {
+  filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+  transition: 0.1s;
+}
+.icon-copy.temp-hover span {
+  border-color: #b01818;
+  transition: 0.1s;
+}
 .icon-copy:before {
   content: "";
   filter: invert(22%) sepia(98%) saturate(3314%) hue-rotate(226deg) brightness(79%) contrast(97%);
@@ -452,6 +471,11 @@ main {
   opacity: 0;
   z-index: -1;
   transition: 0.2s;
+}
+
+.show {
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 body.active:after {
@@ -685,8 +709,8 @@ body:after {
 }
 
 .nav-opener {
-  border: 5px solid #f8f8f8;
-  background-color: #f8f8f8;
+  border: 5px solid transparent;
+  background-color: transparent;
   font-size: 0;
   width: 26px;
   height: 26px;
@@ -953,14 +977,6 @@ body:after {
 }
 .info-holder .text .col-right a {
   border-bottom: none;
-}
-.info-holder .text .col-right a:hover:before, .info-holder .text .col-right a:hover:after {
-  filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
-  transition: 0.3s;
-}
-.info-holder .text .col-right a:hover span {
-  border-color: #b01818;
-  transition: 0.1s;
 }
 
 h1 {
