@@ -155,14 +155,15 @@ function fadeInElements() {
 
     showElements.forEach((element, index) => {
         if (isInViewport(element)) {
-            element.style.transitionDelay = index * 0.3 + "s";
+            element.style.transitionDelay = index * 0.1 + "s";
             element.style.opacity = '1';
         } else {
             window.addEventListener('scroll', () => {
                 if (isInViewport(element)) {
-                    element.style.transitionDelay =  0.1 + "s";
+                    element.style.transitionDelay = 0.1 + "s";
                     element.style.opacity = '1';
-                    window.removeEventListener('scroll', () => {});
+                    window.removeEventListener('scroll', () => {
+                    });
                 }
             });
         }

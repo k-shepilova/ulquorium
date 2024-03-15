@@ -68,12 +68,7 @@ main {
 
 .icon-copy {
   white-space: nowrap;
-  &:hover{
-    color: $blue;
-    border-bottom-color: $blue;
-    transition: 0.3s;
-  }
-  &.temp-hover{
+  &.temp-hover {
     color: $red;
     border-bottom-color: $red;
     text-decoration: none;
@@ -129,7 +124,26 @@ main {
   }
 }
 
-.copy-modal{
+.icon-copy, .icon-external {
+  transition: none;
+  &:hover {
+    transition: none;
+    &:before, &:after {
+      filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+      transition: 0.1s;
+    }
+    span {
+      color: $red;
+      border-bottom-color: $red;
+      transition: 0.1s;
+    }
+  }
+  &:before, &:after, span {
+    transition: 0.3s;
+  }
+}
+
+.copy-modal {
   color: $black;
   background: $white;
   box-shadow: 0 8px 8px rgba($black, 0.25);
@@ -149,5 +163,5 @@ main {
 
 .show {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }

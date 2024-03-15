@@ -311,12 +311,12 @@ template {
 
 @property --startColor {
   syntax: "<color>";
-  initial-value: #1A0E50;
+  initial-value: #1a0e50;
   inherits: false;
 }
 @property --endColor {
   syntax: "<color>";
-  initial-value: #6E1563;
+  initial-value: #6e1563;
   inherits: false;
 }
 html,
@@ -395,11 +395,6 @@ main {
 .icon-copy {
   white-space: nowrap;
 }
-.icon-copy:hover {
-  color: #1b45c7;
-  border-bottom-color: #1b45c7;
-  transition: 0.3s;
-}
 .icon-copy.temp-hover {
   color: #b01818;
   border-bottom-color: #b01818;
@@ -455,6 +450,25 @@ main {
   transition: 0.3s;
 }
 
+.icon-copy, .icon-external {
+  transition: none;
+}
+.icon-copy:hover, .icon-external:hover {
+  transition: none;
+}
+.icon-copy:hover:before, .icon-copy:hover:after, .icon-external:hover:before, .icon-external:hover:after {
+  filter: invert(13%) sepia(96%) saturate(3733%) hue-rotate(352deg) brightness(85%) contrast(94%);
+  transition: 0.1s;
+}
+.icon-copy:hover span, .icon-external:hover span {
+  color: #b01818;
+  border-bottom-color: #b01818;
+  transition: 0.1s;
+}
+.icon-copy:before, .icon-copy:after, .icon-copy span, .icon-external:before, .icon-external:after, .icon-external span {
+  transition: 0.3s;
+}
+
 .copy-modal {
   color: #000;
   background: #fff;
@@ -475,7 +489,7 @@ main {
 
 .show {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 body.active:after {

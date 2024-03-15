@@ -471,18 +471,9 @@ h1 {
   }
   em {
     font-weight: 300;
-    //@media (min-width: 740px) {
-    //  margin-left: calc(-1.35vw - 4px);
-    //}
     @media (min-width: 860px) {
       display: inline-block;
     }
-    //@media (min-width: 1360px) {
-    //  margin-left: calc(-1.5vw - 4px);
-    //}
-    //@media (min-width: 2400px) {
-    //  margin-left: calc(-1.7vw - 4px);
-    //}
     + span {
       display: block;
     }
