@@ -309,16 +309,6 @@ template {
   display: none;
 }
 
-@property --startColor {
-  syntax: "<color>";
-  initial-value: #1a0e50;
-  inherits: false;
-}
-@property --endColor {
-  syntax: "<color>";
-  initial-value: #6e1563;
-  inherits: false;
-}
 html,
 body {
   height: 100%;
@@ -1225,6 +1215,8 @@ h1 em + span {
   transition: --startColor 0.2s, --endColor 0.2s;
 }
 .project.slider-project .image-holder .bg {
+  --startColor: #1a0e50;
+  --endColor: #6e1563;
   background: radial-gradient(circle, var(--startColor) 0%, var(--endColor) 100%);
   transition: --startColor 0.4s, --endColor 0.4s;
 }

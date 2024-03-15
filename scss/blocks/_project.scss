@@ -1,7 +1,3 @@
-.projects {
-
-}
-
 .project {
   margin-bottom: 16px;
   @media (min-width: 860px) {
@@ -177,6 +173,8 @@
         }
       }
       .bg {
+        --startColor: #1a0e50;
+        --endColor: #6e1563;
         background: radial-gradient(circle, var(--startColor) 0%, var(--endColor) 100%);
         transition: --startColor 0.4s, --endColor 0.4s;
         &.decor-table {
